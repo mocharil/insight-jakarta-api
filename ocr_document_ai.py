@@ -12,10 +12,10 @@ class OCRProcessor:
         """
         Initializes the OCRProcessor with the required environment variables.
         """
-        self.credentials_file_path = os.getenv('CREDENTIALS_FILE_PATH') or 'inlaid-sentinel-444404-f8-be06a73c1031.json'
-        self.project_id = os.getenv('PROJECT_ID') or 'inlaid-sentinel-444404-f8'
-        self.location = os.getenv('LOCATION') or 'us'
-        self.processor_id = os.getenv('PROCESSOR_ID') or 'fc8868e2bca617d0'
+        self.credentials_file_path = os.getenv('CREDENTIALS_FILE_PATH')
+        self.project_id = os.getenv('PROJECT_ID') 
+        self.location = os.getenv('LOCATION')
+        self.processor_id = os.getenv('PROCESSOR_ID') 
 
 
         # Ensure required environment variables are set
