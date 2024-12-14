@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pydantic
+elasticsearch
+google-cloud-documentai
+google-cloud-storage
+python-multipart
+python-dotenv
+google-cloud-aiplatform
