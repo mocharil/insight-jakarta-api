@@ -10,24 +10,6 @@ elasticsearch = Elasticsearch(
     http_auth=(os.getenv("ES_USERNAME"), os.getenv("ES_PASSWORD"))
 )
 
-
-def embedding_open_ai(text):
-    import requests
-    request = requests.post(
-        url="http://52.230.101.0:1013/embeddings",
-        json={
-            "text":text,
-            "token":"givemeazurecredsboys!"
-        }
-    )
-
-    result = request.json()
-    return result['detail']['vector']
-
-
-
-
-
 def use_elasticsearch_searching(question: str, index: str, field:str = "text_vector") -> list:
     """
     Perform a combined k-Nearest Neighbors (kNN) and keyword search query in Elasticsearch to retrieve relevant documents.
@@ -40,12 +22,8 @@ def use_elasticsearch_searching(question: str, index: str, field:str = "text_vec
         list(dict): A list of documents that match the query, with only the specified fields (e.g., "text") included in the results.
     """
     
-    # question_vector = use_embedding_from_vertex_ai(question)
-    question_vector = embedding_open_ai(question)
-
-    print(len(question_vector))
-
-
+    question_vector = use_embedding_from_vertex_ai(question)
+    
     knn_query = {
         "field": field,
         "query_vector": question_vector,
