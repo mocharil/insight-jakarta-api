@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from vertexai.language_models import TextEmbeddingModel
 
 load_dotenv()
-GCLOUD_SECRETS = os.getenv("GCLOUD_SECRETS_PATH")
+GCLOUD_SECRETS = os.getenv("CREDENTIAL_DOCAI_FILE_PATH")
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.path.expanduser(GCLOUD_SECRETS)
 
 REGION = os.getenv("REGION")

@@ -25,8 +25,8 @@ class GeminiConnector:
         - model (str): Name of the Gemini model.
         """
         
-        self.credentials = service_account.Credentials.from_service_account_file(os.getenv("CREDENTIAL_DOCAI_FILE_PATH"))
-        self.project_id =  os.getenv("PROJECT_ID")
+        self.credentials = service_account.Credentials.from_service_account_file(os.getenv("CREDENTIAL_GEMINI_FILE_PATH"))
+        self.project_id =  os.getenv("PROJECT_ID_GEMINI")
         self.model = os.getenv("GEMINI_MODEL")
 
         # Initialize Vertex AI
